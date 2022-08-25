@@ -234,13 +234,12 @@ section .rightBox {
   font-size: 5px;
 }
 footer {
-  width: 80%;
-  
+  width: 100%;
   clear: both;
-  height: 120px;
+  height: 200px;
   padding: 20px;
-  background-color: aquamarine;
+  background-color: beige;
   border: 1px solid blue;
-  /* display: flex;
-  justify-content: space-around; */
+  display: flex;
+  justify-content: space-around;
 }

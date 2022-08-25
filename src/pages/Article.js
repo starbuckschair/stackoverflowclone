@@ -18,16 +18,15 @@ function Article(){
             <div className="filterBarButton Active">Active</div>
             <div className="filterBarButton Bountied">Bountied</div>
             <div className="filterBarButton Unanswered">Unanswered</div>
-            <div className="filterBarButton">
-            
-  					<select id="uclass">
-  						<option value="archi">Frequent</option>
-  						<option value="mechanic">Score</option>
-  						<option value="indust">Unanswered</option>
-  						<option value="elec">전기전자공학과</option>
-  						<option value="computer" selected>More</option>
-  						<option value="chemical">Custom Filters</option>
-  					</select>
+            <div className="filterBarButton">            
+                <select id="uclass">
+                    <option value="archi">Frequent</option>
+                    <option value="mechanic">Score</option>
+                    <option value="indust">Unanswered</option>
+                    <option value="elec">전기전자공학과</option>
+                    <option value="computer" selected>More</option>
+                    <option value="chemical">Custom Filters</option>
+                </select>
             </div>
             <div className="filterBarButton">filter</div>
           </div>

@@ -1,8 +1,8 @@
 
 function Footer(){
     return(
-        <>
-        <div>logo icon</div>
+        <footer>
+            <div>logo icon</div>
         <div>
           <p>STACK OVERFLOW</p>
           <h4>Question</h4>
@@ -25,7 +25,7 @@ function Footer(){
           <p>instagram</p>
           <div>footer내용 </div>
         </div>
-        </>
+        </footer>
     )
 }
 
