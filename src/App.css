@@ -3,16 +3,16 @@
 } */
 
 header {
-  padding:5px;
+  padding: 5px;
   margin-bottom: 20px;
-  border:1px solid #61dafb;
+  border: 1px solid #61dafb;
   justify-content: center;
 }
 
 header div {
   display: inline-block;
   width: 50px;
-  height:20px;
+  height: 20px;
   margin: 10px;
   padding: 5px;
   border: 1px solid blue;
@@ -44,9 +44,9 @@ header div {
 
 aside {
   width: 220px;
-  padding:5px;
+  padding: 5px;
   float: left;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   border: 1px solid pink;
 }
 
@@ -119,6 +119,24 @@ section .headline {
 .filterBarButton Unanswered {
   width: 70px;
   height: 14px; 
+  border: 1px solid yellow;
+}
+/* article {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.rightCo {
+  border: 1px solid darkblue;
+  width: 250px;
+  height: 500px;
+}
+.yellowPost {
+  background-color: beige;
+}
+.seeAll {
+  border: 1px solid red;
+  background-color: azure;
 }
 
 section .filteredQuestion {
@@ -197,6 +215,9 @@ footer {
   clear: both;
   padding: 20px;
   border: 1px solid blue;
+
+  display: flex;
+  justify-content: space-around;
 }
 
 .App {
