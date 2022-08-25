@@ -50,16 +50,149 @@ aside {
   border: 1px solid pink;
 }
 
-section {
-  width: 620px;
-  padding: 5px;
+article {
+  width: 1051px;
+  height: 2275px;
+  padding: 24px;
   float: right;
   margin-bottom: 20px;
-  border: 1px solid yellow;
-
-
+  border: 1px solid yellow; 
 }
 
+section {
+  width: 727px;
+  height: 60px;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  font-size: 12px;
+}
+
+section .headline {
+  text-align: left;
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: bold;
+  float: left;
+}
+
+.questionButton {
+  width: 80.223px;
+  height: 15px;
+  padding: 10.4px;
+  float: right;
+}
+
+.TotalQuestions {
+  width: 250px;
+  height: 22px;
+  margin-right: 12px;
+  float: left;
+}
+.filterBar {
+  width: 465px;
+  height: 35px;  
+  background-color: gray;
+  float:right;
+  margin-top: 10px;
+}
+
+.filterBarButton {
+  width: 43px;
+  height: 14px; 
+  padding: 9.6px;
+  margin: 0 0 -1 -1;
+  background-color: white;
+  border: 1px solid black;
+  display: inline;
+}
+
+.filterBarButton Active {
+  width: 35px;
+  height: 14px; 
+}
+
+.filterBarButton Bountied {
+  width: 85px;
+  height: 14px; 
+}
+
+.filterBarButton Unanswered {
+  width: 70px;
+  height: 14px; 
+}
+
+section .filteredQuestion {
+  width: 720px;
+  height: 90px;
+  padding: 16px 16px 16px 16px;
+  border: 1px solid black;
+  background-color: whitesmoke;
+}
+
+.filteredQuestion .leftBox{
+  width: 108px;
+  height: 87px;
+  background-color: antiquewhite;
+  margin-right: 16px;
+  margin-bottom: 4px;
+  float: left;
+  
+}
+
+.filteredQuestion .leftBox .leftBoxSons {
+  width: 45px;
+  height: 17px;
+  background-color: azure;
+  border: 1px solid black;
+}
+
+section .rightBox {
+  width: 595px;
+  height: 90.867px;
+  background-color: beige;
+  float: right;
+}
+
+.rightBoxSons {
+  width: 571px;
+  height: 22px;
+  background-color: white;
+  margin-right: 24px;
+  border: 1px solid black;
+}
+
+.rightBoxSons2 {
+  width: 595px;
+  height: 34px;
+  background-color: white;
+  margin-top: -2px;
+  margin-bottom: 8px;
+  border: 1px solid black;
+}
+.rightBoxSons3 {
+  width: 595px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.tagBox {
+  width: 159px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  
+}
+.currentAskedTime {
+  width: 174px;
+  height: 16px;
+  /* margin-left: 255px; */
+  float: right;
+  border: 1px solid black;
+  background-color: bisque;
+  font-size: 5px;
+}
 footer {
   clear: both;
   padding: 20px;
