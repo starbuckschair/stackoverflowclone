@@ -1,12 +1,16 @@
-/* div {
-  border: 1px solid #ccc;
-} */
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
 
 header {
+  width: 100%;
+  height: 50px;
   padding: 5px;
   margin-bottom: 20px;
   border: 1px solid #61dafb;
-  justify-content: center;
+  position: fixed;
+  background-color: white;
 }
 
 header div {
@@ -43,20 +47,32 @@ header div {
 }
 
 aside {
-  width: 220px;
+  width: 20%;
   padding: 5px;
   float: left;
+  margin-top: 65px;
   margin-bottom: 20px;
   border: 1px solid pink;
+  position: fixed;
+
 }
 
 article {
-  width: 1051px;
+  width: 75%;
   height: 2275px;
   padding: 24px;
   float: right;
+  margin-top: 50px;
   margin-bottom: 20px;
   border: 1px solid yellow; 
+}
+
+.mainBar {
+  float: left;
+}
+
+.rightBar {
+  float: right;
 }
 
 section {
@@ -125,6 +141,12 @@ section .headline {
   display: flex;
   justify-content: space-around;
 } */
+
+.rightSide {
+  width: 300px;
+  height: 248px;
+  float: right;
+}
 
 .rightCo {
   border: 1px solid darkblue;
@@ -212,49 +234,13 @@ section .rightBox {
   font-size: 5px;
 }
 footer {
+  width: 80%;
+  
   clear: both;
+  height: 120px;
   padding: 20px;
+  background-color: aquamarine;
   border: 1px solid blue;
-
-  display: flex;
-  justify-content: space-around;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* display: flex;
+  justify-content: space-around; */
 }
