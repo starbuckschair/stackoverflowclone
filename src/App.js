@@ -17,11 +17,11 @@ function App() {
         <article>
           <div>content1</div>
           <div>content2</div>
-          <div>content3</div>
         </article>
       </section>
       <footer>
           <div>footer내용 </div>
+          {/* 주소입력 */}
         </footer>
 
     </>
