@@ -1,3 +1,37 @@
+/* div {
+  border: 1px solid #ccc;
+} */
+
+header {
+  padding:5px;
+  margin-bottom: 20px;
+  border:1px solid #61dafb;
+}
+
+aside {
+  width: 220px;
+  padding:5px;
+  float: left;
+  margin-bottom:20px;
+  border: 1px solid pink;
+}
+
+section {
+  width: 620px;
+  padding: 5px;
+  float: right;
+  margin-bottom: 20px;
+  border: 1px solid red;
+
+
+}
+
+footer {
+  clear: both;
+  padding: 20px;
+  border: 1px solid blue;
+}
+
 .App {
   text-align: center;
 }
