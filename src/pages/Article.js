@@ -1,5 +1,11 @@
+import FilterMessage from "../FilterMessage"
+import {  useEffect, useState} from 'react'
 
 function Article(){
+    let[modal, setModal]=useState(false)
+    let changeModal =()=>{
+        setModal();
+    }
     return(
         <article>
         <div className="mainBar">
@@ -23,14 +29,16 @@ function Article(){
                     <option value="archi">Frequent</option>
                     <option value="mechanic">Score</option>
                     <option value="indust">Unanswered</option>
-                    <option value="elec">전기전자공학과</option>
                     <option value="computer" selected>More</option>
                     <option value="chemical">Custom Filters</option>
                 </select>
             </div>
-            <div className="filterBarButton">filter</div>
+            <div className="filterBarButton" onClick={()=>{setModal(!modal)}}>filter</div>
           </div>
         </section>
+        {
+            modal===true? <FilterMessage changeModal={changeModal}/> : null
+        }    
         <section>
           <div className="filteredQuestion">
             <div className="leftBox">
