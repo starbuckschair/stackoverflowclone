@@ -54,7 +54,6 @@ aside {
   margin-bottom: 20px;
   border: 1px solid pink;
   position: fixed;
-
 }
 
 article {
@@ -64,7 +63,7 @@ article {
   float: right;
   margin-top: 50px;
   margin-bottom: 20px;
-  border: 1px solid yellow; 
+  border: 1px solid yellow;
 }
 
 .mainBar {
@@ -106,15 +105,15 @@ section .headline {
 }
 .filterBar {
   width: 465px;
-  height: 35px;  
+  height: 35px;
   background-color: gray;
-  float:right;
+  float: right;
   margin-top: 10px;
 }
 
 .filterBarButton {
   width: 43px;
-  height: 14px; 
+  height: 14px;
   padding: 9.6px;
   margin: 0 0 -1 -1;
   background-color: white;
@@ -124,17 +123,17 @@ section .headline {
 
 .filterBarButton Active {
   width: 35px;
-  height: 14px; 
+  height: 14px;
 }
 
 .filterBarButton Bountied {
   width: 85px;
-  height: 14px; 
+  height: 14px;
 }
 
 .filterBarButton Unanswered {
   width: 70px;
-  height: 14px; 
+  height: 14px;
   border: 1px solid yellow;
 }
 /* article {
@@ -169,14 +168,13 @@ section .filteredQuestion {
   background-color: whitesmoke;
 }
 
-.filteredQuestion .leftBox{
+.filteredQuestion .leftBox {
   width: 108px;
   height: 87px;
   background-color: antiquewhite;
   margin-right: 16px;
   margin-bottom: 4px;
   float: left;
-  
 }
 
 .filteredQuestion .leftBox .leftBoxSons {
@@ -222,7 +220,6 @@ section .rightBox {
   background-color: white;
   border: 1px solid black;
   float: left;
-  
 }
 .currentAskedTime {
   width: 174px;
@@ -233,6 +230,7 @@ section .rightBox {
   background-color: bisque;
   font-size: 5px;
 }
+
 footer {
   width: 100%;
   clear: both;

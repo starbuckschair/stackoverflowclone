@@ -1,3 +1,4 @@
+import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage"
 import {  useEffect, useState} from 'react'
 
@@ -12,7 +13,7 @@ function Article(){
         <section>
           <div className="headline">All Question</div>
           <div className="questionButton">
-          <button>Ask Question</button>
+          <button onClick={() => AskQ()}>Ask Question</button>
           </div>
         </section>
         <section>
