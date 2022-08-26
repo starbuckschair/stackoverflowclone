@@ -2,7 +2,7 @@
 function Footer(){
     return(
         <footer>
-            <div>logo icon</div>
+        <div>logo icon</div>
         <div>
           <p>STACK OVERFLOW</p>
           <h4>Question</h4>

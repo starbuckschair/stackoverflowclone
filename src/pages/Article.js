@@ -1,3 +1,4 @@
+import AskQ from "../routes/AskQ";
 
 function Article(){
     return(
@@ -6,7 +7,7 @@ function Article(){
         <section>
           <div className="headline">All Question</div>
           <div className="questionButton">
-          <button>Ask Question</button>
+          <button onClick={() => AskQ()}>Ask Question</button>
           </div>
         </section>
         <section>
