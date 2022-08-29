@@ -5,8 +5,10 @@ const BackStyle = styled.div`
 `;
 
 const Container = styled.div`
+margin-top: 70px;
   display: flex;
   justify-content: space-around;
+  
 `;
 const Writebox = styled.div`
   flex-direction: column;
