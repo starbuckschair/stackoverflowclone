@@ -1,14 +1,14 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const BackStyle = styled.div`
   background-color: #f5f5f5;
 `;
 
 const Container = styled.div`
-margin-top: 70px;
+  margin-top: 70px;
   display: flex;
   justify-content: space-around;
-  
 `;
 const Writebox = styled.div`
   flex-direction: column;
@@ -21,6 +21,13 @@ const InsertBox = styled.div`
   height: 600px;
   flex-direction: column;
   margin-bottom: 20px;
+
+  > label {
+    font-weight: bold;
+  }
+`;
+const InputBoxes = styled.input`
+  flex: 1;
 `;
 const RightBox = styled.div`
   border: 1px solid red;
@@ -34,27 +41,36 @@ const SubmitButton = styled.button`
 `;
 
 function AskQ() {
+
   return (
     <>
       <BackStyle>
         <Container>
           <Writebox>
             <InsertBox>
-              <h4>title</h4>
+              <label>title</label>
               <p>
                 Be specific and imagine you're asking a question to anoher
                 person
               </p>
-              <input></input>
-              <h4>body</h4>
+              <InputBoxes
+                type="text"
+                id="title"
+                placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
+              ></InputBoxes>
+              <label>body</label>
               <p>
                 Include all the information someone would need to answer your
                 question
               </p>
-              <textarea></textarea>
-              <h4>Tags</h4>
+              <textarea id="questions"></textarea>
+              <label>Tags</label>
               <p>Add up to 5 tags to describe what your question is about</p>
-              <input type="text"></input>
+              <InputBoxes
+                type="text"
+                id="tagtag"
+                placeholder="e.g. (angular sql-server string)"
+              ></InputBoxes>
             </InsertBox>
             <SubmitButton>Review your question</SubmitButton>
           </Writebox>

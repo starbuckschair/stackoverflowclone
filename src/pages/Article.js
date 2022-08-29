@@ -2,18 +2,29 @@ import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage";
 import Contents from "../Contents";
 import { useEffect, useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Article(){
-    let[modal, setModal]=useState(false)
-    let changeModal =()=>{
-        setModal();
-    }
+function Article() {
+  let [modal, setModal] = useState(false);
+  let changeModal = () => {
+    setModal();
+  };
+  let navigate = useNavigate();
 
-    let navigate = useNavigate();
-    return(
-        <article>
-        <div className="mainBar">
+  useEffect(() => {
+    const ask = async () => {
+      const data = await fetch(`http://localhost:3001/data`).then((res) =>
+        res.json()
+      );
+      console.log(data);
+    };
+    ask();
+  }, []);
+
+
+  return (
+    <article>
+      <div className="mainBar">
         <section>
           <div className="headline">All Question</div>
           <div className="questionButton">
@@ -32,7 +43,7 @@ function Article(){
             <div className="filterBarButton Bountied">Bountied</div>
             <div className="filterBarButton Unanswered">Unanswered</div>
             <div className="filterBarButton">
-              <select id="uclass">
+              {/* <select id="uclass">
                 <option value="archi">Frequent</option>
                 <option value="mechanic">Score</option>
                 <option value="indust">Unanswered</option>
@@ -40,7 +51,7 @@ function Article(){
                   More
                 </option>
                 <option value="chemical">Custom Filters</option>
-              </select>
+              </select> */}
             </div>
             <div
               className="filterBarButton"
@@ -61,8 +72,20 @@ function Article(){
               <div className="leftBoxSons">views</div>
             </div>
             <div className="rightBox">
-              <div className="rightBoxSons" onClick={()=>{navigate('/contents')}}>volume sizing attached to EC2</div>
-              <div className="rightBoxSons2">Inside an EC2 I have docker with a container that I can't lose, so I noticed that I was out of space on the attached and exclusive volume for docker. So I increased it with another 15GB and execut</div>
+              <div
+                className="rightBoxSons"
+                onClick={() => {
+                  navigate("/contents");
+                }}
+              >
+                volume sizing attached to EC2
+              </div>
+              <div className="rightBoxSons2">
+                Inside an EC2 I have docker with a container that I can't lose,
+                so I noticed that I was out of space on the attached and
+                exclusive volume for docker. So I increased it with another 15GB
+                and execut
+              </div>
               <div className="rightBoxSons3">
                 <div className="tagBox">tag tag tag</div>
                 <div className="currentAskedTime">
