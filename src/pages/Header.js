@@ -1,6 +1,9 @@
-
+import { Link, useNavigate} from "react-router-dom";
 
 function Header(){
+
+    let navigate = useNavigate();
+
     return(
         <header>
         <div className="logo">로고</div>
@@ -10,7 +13,7 @@ function Header(){
           className="headerInput"
           placeholder="(돋보기아이콘)Search..."
         ></input>
-        <div className="headerIcon">myIcon</div>
+        <div className="headerIcon" onClick={()=>{navigate('/users')}}>myIcon</div>
         <div className="headerIcon">icon1</div>
         <div className="headerIcon">icon1</div>
         <div className="headerIcon">icon1</div>

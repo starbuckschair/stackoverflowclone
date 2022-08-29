@@ -2,9 +2,7 @@ import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage";
 import Contents from "../Contents";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import {useNavigate} from 'react-router-dom'
+import { Link, useNavigate} from "react-router-dom";
 
 function Article(){
     let[modal, setModal]=useState(false)

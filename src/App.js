@@ -8,6 +8,7 @@ import Article from "./pages/Article";
 import Footer from "./pages/Footer";
 import AskQ from "./routes/AskQ";
 import Contents from "./Contents";
+import Users from "./Users";
 
 function App() {
   return (
@@ -22,6 +23,12 @@ function App() {
         }/>
         <Route path="/question" element={ <AskQ /> } />
         <Route path="/contents" element={ <Contents /> } />
+        <Route path="/users" element={ 
+          <>
+            < Aside />
+            < Users /> 
+          </>
+        }/>
        </Routes>
       < Footer />     
     </>
