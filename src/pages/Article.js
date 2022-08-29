@@ -1,12 +1,16 @@
 import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage"
+import Contents from "../Contents";
 import {  useEffect, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function Article(){
     let[modal, setModal]=useState(false)
     let changeModal =()=>{
         setModal();
     }
+
+    let navigate = useNavigate();
     return(
         <article>
         <div className="mainBar">
@@ -48,7 +52,7 @@ function Article(){
               <div className="leftBoxSons">views</div>
             </div>
             <div className="rightBox">
-              <div className="rightBoxSons">volume sizing attached to EC2</div>
+              <div className="rightBoxSons" onClick={()=>{navigate('/contents')}}>volume sizing attached to EC2</div>
               <div className="rightBoxSons2">Inside an EC2 I have docker with a container that I can't lose, so I noticed that I was out of space on the attached and exclusive volume for docker. So I increased it with another 15GB and execut</div>
               <div className="rightBoxSons3">
                 <div className="tagBox">tag tag tag</div>
