@@ -150,7 +150,9 @@ function Users(){
                 <MainBoxContents>
                     <QuestionCount>1 Questions</QuestionCount>
                     <AskedQuestion>UITableView CustomCell Reuse(ImageView in CustomCell)</AskedQuestion>
-                    <DeleteButton>Deleted questions</DeleteButton>
+                    <DeleteBox>
+                        <DeleteButton>Deleted questions</DeleteButton>
+                    </DeleteBox>
                 </MainBoxContents>
             </MainBox>
         </UsersQuestions>
