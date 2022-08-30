@@ -1,5 +1,10 @@
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Aside from './pages/Aside'
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 let ContentBox = styled.div`
     margin-top:70px;
@@ -9,7 +14,6 @@ let ContentBox = styled.div`
     margin-left: 20%;
     box-sizing:border-box;
 `
-
 let InsertBox = styled.div`
     width: 90%;
     height: 60px;
@@ -244,12 +248,31 @@ let PostYourAnswer_Button = styled.button`
 
 
 function Contents() {
+    let {id} = useParams()
+    let [choice, setChoice] = useState([])
+    // let contents = choice.find(function(x){
+    //     return x.id === id
+    //   });
+console.log(id)
+    useEffect(()=>{
+        
+        axios.get(`http://localhost:4000/data`).then((data)=>{
+          let copy = [...choice, ...data.data];
+          console.log(copy);
+        setChoice(copy)
+          console.log(choice)
+        })
+        .catch(()=>{
+          console.log('실패함')
+        })
+      },[])
+
     return(
         <>
             <Aside />
             <ContentBox>
                <InsertBox>
-                <TitleBox>Fresh Valet install not pinging .test</TitleBox>
+                <TitleBox>{choice[id].title}</TitleBox>
                 <AskButton>Ask Question</AskButton>
                </InsertBox>
                <CurrentStateBox>

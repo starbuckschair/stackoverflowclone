@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
+
 function Article() {
   let [questions, setQuestions] = useState([])
   let [modal, setModal] = useState(false);
@@ -12,30 +13,19 @@ function Article() {
     setModal();
   };
   let navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const ask = async () => {
-  //     const data = await fetch(`http://localhost:4000/data`).then((res) =>
-  //       res.json()
-  //     );
-  //     console.log(data);
-  //   };
-  //   ask();
-  // }, []);
-
-  useEffect(()=>{
-    axios.get(`http://localhost:4000/data`).then((data)=>{
-      console.log(data.data[0].title);
-      let copy = [...questions, ...data.data];
-      setQuestions(copy);
-
-    })
-    .catch(()=>{
-      console.log('실패함')
-    })
-  },[])
+  
+    useEffect(()=>{
+      axios.get(`http://ec2-15-164-171-167.ap-northeast-2.compute.amazonaws.com:8080/questions`)
+      .then(res=>{
+        console.log(res.data)
+        let copy = [...questions, ...res.data]
+        setQuestions(copy);
 
 
+      });
+    }, []);
+
+    
   return (
     <article>
       <div className="mainBar">
@@ -89,24 +79,24 @@ function Article() {
               {
                 questions.map((a, i)=>{
                   return(
-                    <>
+                    <div key={i}>
                     <div className="rightBoxSons"
                      onClick={() => {
-                      navigate("/contents");
+                      navigate(`/contents/${i}`);
                     }}
                   >
                     { questions[i].title }
                   </div>
-                  <div className="rightBoxSons2">
+                  <div className="rightBoxSons2" >
                    { questions[i].body }
                   </div>
-                  <div className="rightBoxSons3">
+                  <div className="rightBoxSons3" >
                     <div className="tagBox">{ questions[i].tagList }</div>
                     <div className="currentAskedTime">
                     { questions[i].cratedAt }
                     </div>
                   </div>
-                    </>
+                    </div>
                   )
                 })
               }
