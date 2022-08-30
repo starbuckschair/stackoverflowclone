@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {useSelector} from "react-redux"
 
 let UsersQuestions = styled.div`
     margin-top: 80px;
@@ -129,7 +130,8 @@ let DeleteButton = styled.button`
 
 function Users(){
 
-
+        let a = useSelector((state)=>{return state.user})
+        console.log(a)
     return(
         <UsersQuestions>
             <TitleBox>

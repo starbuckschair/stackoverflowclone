@@ -1,25 +1,39 @@
 import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage";
-import Contents from "../Contents";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 function Article() {
+  let [questions, setQuestions] = useState([])
   let [modal, setModal] = useState(false);
   let changeModal = () => {
     setModal();
   };
   let navigate = useNavigate();
 
-  useEffect(() => {
-    const ask = async () => {
-      const data = await fetch(`http://localhost:3001/data`).then((res) =>
-        res.json()
-      );
-      console.log(data);
-    };
-    ask();
-  }, []);
+  // useEffect(() => {
+  //   const ask = async () => {
+  //     const data = await fetch(`http://localhost:4000/data`).then((res) =>
+  //       res.json()
+  //     );
+  //     console.log(data);
+  //   };
+  //   ask();
+  // }, []);
+
+  useEffect(()=>{
+    axios.get(`http://localhost:4000/data`).then((data)=>{
+      console.log(data.data[0].title);
+      let copy = [...questions, ...data.data];
+      setQuestions(copy);
+
+    })
+    .catch(()=>{
+      console.log('실패함')
+    })
+  },[])
 
 
   return (
@@ -72,26 +86,31 @@ function Article() {
               <div className="leftBoxSons">views</div>
             </div>
             <div className="rightBox">
-              <div
-                className="rightBoxSons"
-                onClick={() => {
-                  navigate("/contents");
-                }}
-              >
-                volume sizing attached to EC2
-              </div>
-              <div className="rightBoxSons2">
-                Inside an EC2 I have docker with a container that I can't lose,
-                so I noticed that I was out of space on the attached and
-                exclusive volume for docker. So I increased it with another 15GB
-                and execut
-              </div>
-              <div className="rightBoxSons3">
-                <div className="tagBox">tag tag tag</div>
-                <div className="currentAskedTime">
-                  user avatar David 264 asked 1 min ago
-                </div>
-              </div>
+              {
+                questions.map((a, i)=>{
+                  return(
+                    <>
+                    <div className="rightBoxSons"
+                     onClick={() => {
+                      navigate("/contents");
+                    }}
+                  >
+                    { questions[i].title }
+                  </div>
+                  <div className="rightBoxSons2">
+                   { questions[i].body }
+                  </div>
+                  <div className="rightBoxSons3">
+                    <div className="tagBox">{ questions[i].tagList }</div>
+                    <div className="currentAskedTime">
+                    { questions[i].cratedAt }
+                    </div>
+                  </div>
+                    </>
+                  )
+                })
+              }
+
             </div>
           </div>
         </section>
