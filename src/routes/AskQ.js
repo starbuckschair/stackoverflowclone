@@ -41,7 +41,6 @@ const SubmitButton = styled.button`
 `;
 
 function AskQ() {
-
   return (
     <>
       <BackStyle>
@@ -94,4 +93,12 @@ function AskQ() {
   );
 }
 
+function Modal() {
+
+  return (
+    <>
+    
+    </>
+  );
+}
 export default AskQ;
