@@ -13,7 +13,7 @@ function Article() {
 
   useEffect(() => {
     const ask = async () => {
-      const data = await fetch(`http://localhost:3001/data`).then((res) =>
+      const data = await fetch(`http://localhost:4000/data`).then((res) =>
         res.json()
       );
       console.log(data);
