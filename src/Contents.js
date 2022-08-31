@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Aside from './pages/Aside'
 import { useEffect, useState } from "react";
@@ -244,6 +244,7 @@ let PostYourAnswerButton = styled.button`
 function Contents() {
     let {id} = useParams()
     let [choice, setChoice] = useState([])
+    let navigate = useNavigate();
     
  
     useEffect(()=>{
@@ -274,7 +275,7 @@ function Contents() {
                     <ContentBox>
                         <InsertBox> 
                             <TitleBox key={key}>{el.title}</TitleBox>
-                            <AskButton >Ask Question</AskButton>
+                            <AskButton onClick={() => {navigate('/question');}}>Ask Question</AskButton>
                         </InsertBox>
                         <CurrentStateBox>
                 <AskedBox>Asked today</AskedBox>
