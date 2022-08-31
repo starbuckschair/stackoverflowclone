@@ -241,12 +241,6 @@ let PostYourAnswerButton = styled.button`
 
 `
 
-// getMyData=sync()=>{
-//     let retData = await axios.get("https://jsonplaceholder.typicode.com/users");
-//     retData = retData.data;
-//     console.log(JSON.stringify(retData));
-//     }
-
 function Contents() {
     let {id} = useParams()
     let [choice, setChoice] = useState([])
@@ -266,18 +260,23 @@ function Contents() {
         
       },[])
 
-      console.log(choice);
-
+    //   console.log(choice[0].userId);
 
     return(
         <>
             <Aside />
-            <ContentBox>
-               <InsertBox>
-                <TitleBox>{choice[0].title}</TitleBox>
-                <AskButton>Ask Question</AskButton>
-               </InsertBox>
-               <CurrentStateBox>
+                {
+                  choice.filter((el)=>{
+                      return el.questionId === parseInt(id)+1;
+                    }).map((el, key)=>{
+                      console.log(el)
+                    return(
+                    <ContentBox>
+                        <InsertBox> 
+                            <TitleBox key={key}>{el.title}</TitleBox>
+                            <AskButton >Ask Question</AskButton>
+                        </InsertBox>
+                        <CurrentStateBox>
                 <AskedBox>Asked today</AskedBox>
                 <AskedBox>Modified today</AskedBox>
                 <AskedBox>Viewed 28times</AskedBox>
@@ -364,6 +363,14 @@ function Contents() {
                </Body>
 
             </ContentBox>
+                
+                    )
+                  })
+                } 
+                
+                
+              
+             
         </>
     )
 }

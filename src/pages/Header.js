@@ -1,5 +1,6 @@
-import {useNavigate} from "react-router-dom";
+import {Routes, Route, Link, useNavigate} from "react-router-dom";
 import styled from "styled-components";
+
 
 let HeaderLine = styled.header`
   position: fixed;
@@ -81,7 +82,7 @@ function Header(){
     let navigate = useNavigate();
     return(
         <HeaderLine>
-        <Logo>로고</Logo>
+        <Logo onClick={()=>{navigate('/')}}>로고</Logo>
         <ProductButton>Products</ProductButton>
         <HeaderInput
           type="text"
