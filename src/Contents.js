@@ -150,12 +150,11 @@ let CurrentStateThree = styled.div`
     background-color: white;
     color:black;
 
-
 `
 let CurrentButton = styled.button`
     width: auto;
     height: 15px
-    background-color: white;
+    background-color: white
     color:black;
     margin: 0.5%;
 `
