@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Contents from "../Contents.js";
+import { useNavigate, useParams } from "react-router-dom";
 
 const BackStyle = styled.div`
   background-color: #f5f5f5;
 `;
 
 const Container = styled.div`
-  margin-top: 70px;
+  padding-top: 70px;
   display: flex;
   justify-content: space-around;
 `;
-const Writebox = styled.div`
+const WriteBox = styled.div`
   flex-direction: column;
 `;
 
@@ -43,15 +44,42 @@ const SubmitButton = styled.button`
 `;
 
 function AskQ() {
-  const [titlevalue, setTitleValue] = useState("");
-  const [bodyvalue, setBodyValue] = useState("");
-  const [tagsvalue, setTagsValue] = useState("");
+  const [titleValue, setTitleValue] = useState("");
+  const [bodyValue, setBodyValue] = useState("");
+  const [tagsValue, setTagsValue] = useState([]);
+  const navigate = useNavigate();
+  let { id } = useParams();
 
+  let question = {
+    userId: 1,
+    title: titleValue,
+    body: bodyValue,
+    tagList: [],
+    cratedAt: "2022-08-27T14:20:00.1151922",
+    modifiedAt: "2022-08027T14:20:00.1151922",
+    views: 0,
+    votes: 0,
+    answerList: [],
+  };
+
+  const WriteSub = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:4000/questions", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(question),
+    }).then((res) => console.log(res.json()));
+    // setValue("");
+    subWrite();
+  };
+  const subWrite = () => {
+    navigate("/");
+  };
   return (
     <>
       <BackStyle>
         <Container>
-          <Writebox>
+          <WriteBox>
             <InsertBox>
               <label>title</label>
               <p>
@@ -64,7 +92,7 @@ function AskQ() {
                 placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
                 onChange={(e) => {
                   setTitleValue(e.target.value);
-                  console.log(titlevalue);
+                  console.log(titleValue);
                 }}
               ></InputBoxes>
               <label>body</label>
@@ -73,32 +101,24 @@ function AskQ() {
                 question
               </p>
               <textarea
-                id="questions"
                 onChange={(e) => {
                   setBodyValue(e.target.value);
-                  console.log(bodyvalue);
+                  console.log(bodyValue);
                 }}
               ></textarea>
               <label>Tags</label>
               <p>Add up to 5 tags to describe what your question is about</p>
               <InputBoxes
                 type="text"
-                id="tagtag"
                 placeholder="e.g. (angular sql-server string)"
                 onChange={(e) => {
                   setTagsValue(e.target.value);
-                  console.log(tagsvalue);
+                  console.log(tagsValue);
                 }}
               ></InputBoxes>
             </InsertBox>
-            <SubmitButton
-              onClick={() => {
-                
-              }}
-            >
-              Review your question
-            </SubmitButton>
-          </Writebox>
+            <SubmitButton onClick={WriteSub}>Review your question</SubmitButton>
+          </WriteBox>
 
           <RightBox>
             <>
