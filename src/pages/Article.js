@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
-
 function Article() {
-  let [questions, setQuestions] = useState([])
+  let [questions, setQuestions] = useState([]);
   let [modal, setModal] = useState(false);
   let changeModal = () => {
     setModal();
