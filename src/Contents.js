@@ -38,7 +38,7 @@ let AskButton = styled.button`
 `
 
 let CurrentStateBox  = styled.div`
-    width: 90%
+    width: 90%;
     height: 40px;
     background-color: gray;
     margin: 10px;
@@ -76,7 +76,7 @@ let Sidebar = styled.div`
 
 let Buttons = styled.button`
     width:30px;
-    heigh:30px;
+    height:30px;
     background-color:black;
     color:white;
     margin: 15px;
@@ -146,7 +146,7 @@ let CurrentStateLine = styled.div`
 
 let CurrentStateThree = styled.div`
     width: 30%;
-    heigh: 60px;
+    height: 60px;
     margin: 5px;
     background-color: white;
     color:black;
@@ -154,8 +154,8 @@ let CurrentStateThree = styled.div`
 `
 let CurrentButton = styled.button`
     width: auto;
-    height: 15px
-    background-color: white
+    height: 15px;
+    background-color: white;
     color:black;
     margin: 0.5%;
 `
@@ -227,7 +227,6 @@ let YourAnswerInput = styled.input`
     background-color: black;
     color: white;
     border: 1px solid white;
-    type: text;
 `
 let PostYourAnswer = styled.div`
     width: 95%;
@@ -237,7 +236,7 @@ let PostYourAnswer = styled.div`
     color: white;
     border: 1px solid white;
 `
-let PostYourAnswer_Button = styled.button`
+let PostYourAnswerButton = styled.button`
     width: 30%;
     height: 40px;
     background-color: white;
@@ -351,7 +350,7 @@ console.log(id)
                         <YourAnswerTitle>Your Answer</YourAnswerTitle>
                         <YourAnswerInput type={"text"} placeholder={"댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳 댓글다는곳"}></YourAnswerInput>
                         <PostYourAnswer>
-                            <PostYourAnswer_Button>Post Your Answer</PostYourAnswer_Button>                            
+                            <PostYourAnswerButton>Post Your Answer</PostYourAnswerButton>                            
                         </PostYourAnswer>
                     </YourAnswer>
                 </BodyMain>
