@@ -93,7 +93,7 @@ function AskQ() {
             </InsertBox>
             <SubmitButton
               onClick={() => {
-                56;
+                
               }}
             >
               Review your question

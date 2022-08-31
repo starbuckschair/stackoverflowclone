@@ -1,7 +1,7 @@
 import AskQ from "../routes/AskQ";
 import FilterMessage from "../FilterMessage";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function Article() {
@@ -11,6 +11,7 @@ function Article() {
     setModal();
   };
   let navigate = useNavigate();
+  let {id} = useParams();
   
     useEffect(()=>{
       axios.get(`http://localhost:4000/question`)
@@ -80,7 +81,7 @@ function Article() {
                     <div key={i}>
                     <div className="rightBoxSons"
                      onClick={() => {
-                      navigate('/contents');
+                      navigate(`/contents/${i}`);
                     }}
                   >
                     { questions[i].title }

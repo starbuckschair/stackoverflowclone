@@ -73,7 +73,6 @@ let Sidebar = styled.div`
     align-items: center;
 
 `
-
 let Buttons = styled.button`
     width:30px;
     height:30px;
@@ -94,7 +93,6 @@ let BodyMain = styled.div`
     background-color: white;
     border: 1px solid black;
 `
-
 let BodyMainTitle = styled.div`
     width: 100%;
     height: 100px;
@@ -102,7 +100,6 @@ let BodyMainTitle = styled.div`
     color:white;
     border: 1px solid white;
 `
-
 let CodeBox = styled.div`
     width: 95%;
     height: auto;
@@ -244,31 +241,40 @@ let PostYourAnswerButton = styled.button`
 
 `
 
-
+// getMyData=sync()=>{
+//     let retData = await axios.get("https://jsonplaceholder.typicode.com/users");
+//     retData = retData.data;
+//     console.log(JSON.stringify(retData));
+//     }
 
 function Contents() {
     let {id} = useParams()
     let [choice, setChoice] = useState([])
+    
  
-console.log(id)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/question`).then((res)=>{
-          let copy = [...choice, ...res.data];
-          console.log(copy);
-        setChoice(copy)
-          console.log(choice)
-        })
-        .catch(()=>{
-          console.log('실패함')
-        })
+            axios.get(`http://localhost:4000/question`).then((res)=>{
+                let copy = [...choice, ...res.data];
+                // console.log(copy);
+                setChoice(copy)
+                // console.log(choice)
+
+            })
+            .catch(()=>{
+              console.log('실패함')
+            })
+        
       },[])
+
+      console.log(choice);
+
 
     return(
         <>
             <Aside />
             <ContentBox>
                <InsertBox>
-                <TitleBox>choice.title</TitleBox>
+                <TitleBox>{choice[0].title}</TitleBox>
                 <AskButton>Ask Question</AskButton>
                </InsertBox>
                <CurrentStateBox>
