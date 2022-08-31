@@ -15,17 +15,17 @@ function Article() {
   let navigate = useNavigate();
   
     useEffect(()=>{
-      axios.get(`http://ec2-15-164-171-167.ap-northeast-2.compute.amazonaws.com:8080/questions`)
+      axios.get(`http://localhost:4000/question`)
       .then(res=>{
         console.log(res.data)
         let copy = [...questions, ...res.data]
+        console.log(copy)
         setQuestions(copy);
-
 
       });
     }, []);
 
-    
+
   return (
     <article>
       <div className="mainBar">
@@ -82,7 +82,7 @@ function Article() {
                     <div key={i}>
                     <div className="rightBoxSons"
                      onClick={() => {
-                      navigate(`/contents/${i}`);
+                      navigate('/contents');
                     }}
                   >
                     { questions[i].title }

@@ -26,7 +26,7 @@ function App() {
           </>
         }/>
         <Route path="/question" element={ <AskQ /> } />
-        <Route path="/contents/:id" element={ <Contents /> } />
+        <Route path="/contents" element={ <Contents /> } />
         <Route path="/users" element={ 
           <>
             < Aside />

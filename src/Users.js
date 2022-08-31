@@ -1,16 +1,14 @@
 import styled from 'styled-components'
-import {useSelector} from "react-redux"
 
 let UsersQuestions = styled.div`
-    margin-top: 80px;
+    padding-top: 80px;
     margin-left: 22%;
     width: 70%;
-    heigh: auto;
+    height: auto;
     background-color: black;
     color: white;
     border: 1px solid black;
 `
-
 let TitleBox = styled.div`
     width: 95%;
     height: auto;
@@ -35,10 +33,9 @@ let UserImage = styled.div`
     border: 1px solid black;
    
 `
-
 let UserBoxRight = styled.div`
     width: 78%;
-    height: auto 
+    height: auto;
     margin: 0.5%;
     background-color: black;
     border: 1px solid white;
@@ -64,7 +61,7 @@ let StateBox = styled.div`
 `
 let MainBox = styled.div`
     width: 95%;
-    heigh: auto;
+    height: auto;
     margin: 0.5%;
     font-size: 12px;
     background-color: black;
@@ -74,7 +71,7 @@ let MainBox = styled.div`
 `
 let MainBoxSide = styled.div`
     width: 10%;
-    heigh: 600px;
+    height: 600px;
     margin: 0.5%;
     background-color: white;
     color: black;
@@ -83,7 +80,7 @@ let MainBoxSide = styled.div`
 `
 let MainBoxContents = styled.div`
     width: 98%;
-    heigh: 600px;
+    height: 600px;
     margin: 0.5%;
     background-color: white;
     color: black;
@@ -116,7 +113,6 @@ let DeleteBox = styled.div`
     background-color: white;
     border: 1px solid black;
 `
-
 let DeleteButton = styled.button`
     width: auto;
     height: auto;
@@ -130,8 +126,7 @@ let DeleteButton = styled.button`
 
 function Users(){
 
-        let a = useSelector((state)=>{return state.user})
-        console.log(a)
+        
     return(
         <UsersQuestions>
             <TitleBox>

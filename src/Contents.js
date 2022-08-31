@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-let ContentBox = styled.div`
-    margin-top:70px;
+let ContentBox = styled.section`
+    /* margin-top:70px; */
     width: 75%;
     height: auto;
+    padding-top: 70px;
     background-color: pink;
     margin-left: 20%;
     box-sizing:border-box;
@@ -250,14 +251,11 @@ let PostYourAnswer_Button = styled.button`
 function Contents() {
     let {id} = useParams()
     let [choice, setChoice] = useState([])
-    // let contents = choice.find(function(x){
-    //     return x.id === id
-    //   });
+ 
 console.log(id)
     useEffect(()=>{
-        
-        axios.get(`http://localhost:4000/data`).then((data)=>{
-          let copy = [...choice, ...data.data];
+        axios.get(`http://localhost:4000/question`).then((res)=>{
+          let copy = [...choice, ...res.data];
           console.log(copy);
         setChoice(copy)
           console.log(choice)
@@ -272,7 +270,7 @@ console.log(id)
             <Aside />
             <ContentBox>
                <InsertBox>
-                <TitleBox>{choice[id].title}</TitleBox>
+                <TitleBox>choice.title</TitleBox>
                 <AskButton>Ask Question</AskButton>
                </InsertBox>
                <CurrentStateBox>

@@ -3,52 +3,6 @@
   margin: 0 auto;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  padding: 5px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  border: 1px solid #61dafb;
-  background-color: white;
-  /* box-sizing: border-box; */
-}
-
-header div {
-  display: inline-block;
-  width: 50px;
-  height: 20px;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid blue;
-}
-.logo {
-  width: 150px;
-  height: 30px;
-  border: 1px solid red;
-}
-.product {
-  width: 54px;
-  height: 17px;
-  padding: 6 12 6 12;
-  font-size: 14px;
-  border: 1px solid red;
-}
-.headerInput {
-  width: 785px;
-  height: 32px;
-  padding: 8 0 8 0;
-  border: 1px solid blue;
-}
-.headerIcon {
-  width: 20px;
-  height: 47px;
-  padding: 0 10 0 10;
-  border: 1px solid red;
-}
-
 aside {
   width: 20%;
   padding: 5px;
