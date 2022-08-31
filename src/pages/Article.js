@@ -4,28 +4,22 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
-
 function Article() {
-  let [questions, setQuestions] = useState([])
+  let [questions, setQuestions] = useState([]);
   let [modal, setModal] = useState(false);
   let changeModal = () => {
     setModal();
   };
   let navigate = useNavigate();
-  
-    useEffect(()=>{
-      axios.get(`http://ec2-15-164-171-167.ap-northeast-2.compute.amazonaws.com:8080/questions`)
-      .then(res=>{
-        console.log(res.data)
-        let copy = [...questions, ...res.data]
-        setQuestions(copy);
 
+  useEffect(() => {
+    axios.get(`http://localhost:4000/`).then((res) => {
+      console.log(res.data);
+      let copy = [...questions, ...res.data];
+      setQuestions(copy);
+    });
+  }, []);
 
-      });
-    }, []);
-
-    
   return (
     <article>
       <div className="mainBar">
@@ -76,31 +70,27 @@ function Article() {
               <div className="leftBoxSons">views</div>
             </div>
             <div className="rightBox">
-              {
-                questions.map((a, i)=>{
-                  return(
-                    <div key={i}>
-                    <div className="rightBoxSons"
-                     onClick={() => {
-                      navigate(`/contents/${i}`);
-                    }}
-                  >
-                    { questions[i].title }
-                  </div>
-                  <div className="rightBoxSons2" >
-                   { questions[i].body }
-                  </div>
-                  <div className="rightBoxSons3" >
-                    <div className="tagBox">{ questions[i].tagList }</div>
-                    <div className="currentAskedTime">
-                    { questions[i].cratedAt }
+              {questions.map((a, i) => {
+                return (
+                  <div key={i}>
+                    <div
+                      className="rightBoxSons"
+                      onClick={() => {
+                        navigate(`/contents/${i}`);
+                      }}
+                    >
+                      {questions[i].title}
+                    </div>
+                    <div className="rightBoxSons2">{questions[i].body}</div>
+                    <div className="rightBoxSons3">
+                      <div className="tagBox">{questions[i].tagList}</div>
+                      <div className="currentAskedTime">
+                        {questions[i].cratedAt}
+                      </div>
                     </div>
                   </div>
-                    </div>
-                  )
-                })
-              }
-
+                );
+              })}
             </div>
           </div>
         </section>
