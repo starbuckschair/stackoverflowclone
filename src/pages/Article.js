@@ -15,7 +15,7 @@ function Article() {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/question`).then((res) => {
+    axios.get('http://localhost:4000/question').then((res) => {
       console.log(res.data);
       let copy = [...questions, ...res.data];
       console.log(copy);
@@ -165,15 +165,21 @@ function Article() {
     font-size: 15px;;
     margin: 0.5%;
     border: 1px solid black;
+    overflow: hidden;
+
   `
 
   let RightBoxSons2 = styled.div`
     width: 95%;
-    height: 20px;
+    height: 40px;
     background-color: white;
     font-size: 12px;;
     margin: 0.5%;
     border: 1px solid black;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3 (integer);
+    overflow: hidden;
   `
   let RightBoxSons3 = styled.div`
     width: 95%;
