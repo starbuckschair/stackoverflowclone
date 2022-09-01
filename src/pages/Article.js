@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-//jj
+
 function Article() {
   let [questions, setQuestions] = useState([]);
   let [modal, setModal] = useState(false);
