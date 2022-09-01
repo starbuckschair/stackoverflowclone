@@ -4,7 +4,7 @@ import Contents from "../Contents.js";
 import { useNavigate, useParams } from "react-router-dom";
 
 const BackStyle = styled.div`
-  background-color: #f5f5f5;
+  background-color: #f1f2f3;
 `;
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const WriteBox = styled.div`
 
 const InsertBox = styled.div`
   border: 1px solid rebeccapurple;
-  background-color: white;
+  background-color: #ffffff;
   width: 50em;
   height: 600px;
   flex-direction: column;
@@ -43,6 +43,18 @@ const SubmitButton = styled.button`
   background-color: aliceblue;
 `;
 
+const ModalBox = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 function AskQ() {
   const [titleValue, setTitleValue] = useState("");
   const [bodyValue, setBodyValue] = useState("");
@@ -51,6 +63,7 @@ function AskQ() {
   let { id } = useParams();
 
   let question = {
+    questionId: 15,
     userId: 1,
     title: titleValue,
     body: bodyValue,
@@ -64,7 +77,7 @@ function AskQ() {
 
   const WriteSub = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/questions", {
+    fetch("http://localhost:4000/question", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(question),

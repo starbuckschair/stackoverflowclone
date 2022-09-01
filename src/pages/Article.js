@@ -11,19 +11,16 @@ function Article() {
     setModal();
   };
   let navigate = useNavigate();
-  let {id} = useParams();
-  
-    useEffect(()=>{
-      axios.get(`http://localhost:4000/question`)
-      .then(res=>{
-        console.log(res.data)
-        let copy = [...questions, ...res.data]
-        console.log(copy)
-        setQuestions(copy);
+  let { id } = useParams();
 
-      });
-    }, []);
-
+  useEffect(() => {
+    axios.get(`http://localhost:4000/question`).then((res) => {
+      console.log(res.data);
+      let copy = [...questions, ...res.data];
+      console.log(copy);
+      setQuestions(copy);
+    });
+  }, []);
 
   return (
     <article>
@@ -75,31 +72,27 @@ function Article() {
               <div className="leftBoxSons">views</div>
             </div>
             <div className="rightBox">
-              {
-                questions.map((a, i)=>{
-                  return(
-                    <div key={i}>
-                    <div className="rightBoxSons"
-                     onClick={() => {
-                      navigate(`/contents/${i}`);
-                    }}
-                  >
-                    { questions[i].title }
-                  </div>
-                  <div className="rightBoxSons2" >
-                   { questions[i].body }
-                  </div>
-                  <div className="rightBoxSons3" >
-                    <div className="tagBox">{ questions[i].tagList }</div>
-                    <div className="currentAskedTime">
-                    { questions[i].cratedAt }
+              {questions.map((a, i) => {
+                return (
+                  <div key={i}>
+                    <div
+                      className="rightBoxSons"
+                      onClick={() => {
+                        navigate(`/contents/${i}`);
+                      }}
+                    >
+                      {questions[i].title}
+                    </div>
+                    <div className="rightBoxSons2">{questions[i].body}</div>
+                    <div className="rightBoxSons3">
+                      <div className="tagBox">{questions[i].tagList}</div>
+                      <div className="currentAskedTime">
+                        {questions[i].cratedAt}
+                      </div>
                     </div>
                   </div>
-                    </div>
-                  )
-                })
-              }
-
+                );
+              })}
             </div>
           </div>
         </section>
