@@ -24,7 +24,6 @@
       "votes": 0,
       "answerList": []
     },
-
     {
       "questionId": 4,
       "userId": 4,
@@ -206,6 +205,19 @@
       "votes": 0,
       "answerList": [],
       "id": 5
+    },
+    {
+      "questionId": 15,
+      "userId": 1,
+      "title": "",
+      "body": "",
+      "tagList": [],
+      "cratedAt": "2022-08-27T14:20:00.1151922",
+      "modifiedAt": "2022-08027T14:20:00.1151922",
+      "views": 0,
+      "votes": 0,
+      "answerList": [],
+      "id": 6
     }
   ]
 }

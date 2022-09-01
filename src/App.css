@@ -2,6 +2,19 @@
   width: 100%;
   margin: 10%;
 } */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 aside {
   width: 10%;
@@ -11,7 +24,6 @@ aside {
   padding-top: 70px;
   border: 1px solid pink;
   position: fixed;
-  
 }
 
 footer {

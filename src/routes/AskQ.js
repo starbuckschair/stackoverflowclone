@@ -4,39 +4,80 @@ import Contents from "../Contents.js";
 import { useNavigate, useParams } from "react-router-dom";
 
 const BackStyle = styled.div`
+  padding-top: 70px;
   background-color: #f1f2f3;
+  width: 100%;
+  height: auto;
+  /* margin-left:3%; */
+`;
+const Container = styled.div`
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  /* box-sizing: border-box; */
+  padding: 0, 24, 24, 24;
 `;
 
-const Container = styled.div`
-  padding-top: 70px;
+const HeadLine = styled.div`
+  width: 70em;
+  height: 82px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border: 1px solid black;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: large;
 `;
-const WriteBox = styled.div`
+
+const ContentBox = styled.div`
+  display: flex;
+  width: 85vw;
+  justify-content: space-between;
+  padding: 24px;
+  border: 1px solid red;
+`;
+const LeftBox = styled.div`
   flex-direction: column;
 `;
 
 const InsertBox = styled.div`
-  border: 1px solid rebeccapurple;
+  /* border: 1px solid rebeccapurple; */
+  border-radius: 3px;
+  box-sizing: inherit;
   background-color: #ffffff;
-  width: 50em;
+  width: 53em;
   height: 600px;
   flex-direction: column;
+  justify-content: space-around;
+  padding: 16px;
   margin-bottom: 20px;
+  box-shadow: 3px 3px 11px -4px #d8d9da;
 
   > label {
     font-weight: bold;
   }
 `;
 const InputBoxes = styled.input`
-  flex: 1;
+  width: 96%;
+  height: 25px;
+  text-align: start;
+  padding: 4.5px;
+`;
+const TextareaBox = styled.textarea`
+  width: 96%;
+  height: 200px;
+  padding: 4px;
+`;
+const RightBox = styled.div`
+  background-color: #ffffff;
+  width: 20em;
+  /* border: 1px solid red; */
+  height: 350px;
+  box-shadow: 3px 3px 11px -4px #d8d9da;
 `;
 
-const RightBox = styled.div`
-  border: 1px solid red;
-  width: 20em;
-  height: 350px;
-`;
 const SubmitButton = styled.button`
   width: 150px;
   height: 50px;
@@ -89,16 +130,21 @@ function AskQ() {
     navigate("/");
   };
   return (
-    <>
-      <BackStyle>
-        <Container>
-          <WriteBox>
+    <BackStyle>
+      <Container>
+        <HeadLine>Ask a public question</HeadLine>
+        <ContentBox>
+          <LeftBox>
             <InsertBox>
-              <label>title</label>
-              <p>
-                Be specific and imagine you're asking a question to anoher
-                person
-              </p>
+              <label>
+                Title
+                <div>
+                  <p>
+                    Be specific and imagine you're asking a question to anoher
+                    person
+                  </p>
+                </div>
+              </label>
               <InputBoxes
                 type="text"
                 id="title"
@@ -113,12 +159,12 @@ function AskQ() {
                 Include all the information someone would need to answer your
                 question
               </p>
-              <textarea
+              <TextareaBox
                 onChange={(e) => {
                   setBodyValue(e.target.value);
                   console.log(bodyValue);
                 }}
-              ></textarea>
+              ></TextareaBox>
               <label>Tags</label>
               <p>Add up to 5 tags to describe what your question is about</p>
               <InputBoxes
@@ -131,7 +177,7 @@ function AskQ() {
               ></InputBoxes>
             </InsertBox>
             <SubmitButton onClick={WriteSub}>Review your question</SubmitButton>
-          </WriteBox>
+          </LeftBox>
 
           <RightBox>
             <>
@@ -146,9 +192,9 @@ function AskQ() {
               </div>
             </>
           </RightBox>
-        </Container>
-      </BackStyle>
-    </>
+        </ContentBox>
+      </Container>
+    </BackStyle>
   );
 }
 
