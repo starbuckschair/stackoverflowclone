@@ -16,16 +16,6 @@ a {
   text-decoration: none;
 }
 
-aside {
-  width: 10%;
-  height: auto;
-  padding: 5px;
-  float: left;
-  padding-top: 70px;
-  border: 1px solid pink;
-  position: fixed;
-}
-
 footer {
   width: 100%;
   clear: both;

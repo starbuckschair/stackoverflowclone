@@ -1,14 +1,70 @@
+import styled from "styled-components";
+import { IoIosGlobe } from "react-icons/io";
+
+
+let Menubar = styled.div`
+  width: 147px;
+  height: auto;
+  padding: 5px;
+  padding-top: 80px;
+  margin-bottom: 200px;
+  position: fixed;
+  left: 60px;
+  display: flex;
+  flex-direction:column;
+
+;
+
+`
+
+let MainDish = styled.ol`
+    width: auto;
+    margin-top:20px;
+    font-size: 13px;
+    color: rgb(83, 89, 95);
+`
+let HomeDiv = styled(MainDish)`
+    font-weight: 600;
+`
+
+let SideDish = styled.li`
+    margin-top:20px;
+    font-size: 13px;
+    padding-left: 30px;
+
+`
+
+let SideDishQuestions = styled.li`
+    margin-top:0.5em;
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 4px;
+    background-color: rgb(241 242 243);
+    font-weight:bolder;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`
+let QuestionDiv = styled.div`
+    padding-left: 4px;
+    font-size: 13px;
+`
 
 function Aside(){
     return(
-        <aside>
-            <h3>Home</h3>
-            <h3>PUBLIC</h3>
-            {/* <h3><FontAwesomeIcon icon={faEarthAmericas} />Question</h3> */}        
-            <p> Tag</p>
-            <p> Users</p>
-            <p> Companies</p>
-        </aside>
+        <Menubar>
+            <HomeDiv>Home</HomeDiv>
+            <MainDish>PUBLIC
+                <SideDishQuestions>
+                    <IoIosGlobe/> 
+                    <QuestionDiv>Questions</QuestionDiv>
+                </SideDishQuestions>
+                <SideDish> Tag</SideDish>
+                <SideDish> Users</SideDish>
+                <SideDish> Companies</SideDish>  
+            </MainDish>  
+        </Menubar>
     )
 }
 
