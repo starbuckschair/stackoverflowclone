@@ -12,19 +12,16 @@ function Article() {
     setModal();
   };
   let navigate = useNavigate();
-  let {id} = useParams();
-  
-    useEffect(()=>{
-      axios.get(`http://localhost:4000/question`)
-      .then(res=>{
-        console.log(res.data)
-        let copy = [...questions, ...res.data]
-        console.log(copy)
-        setQuestions(copy);
+  let { id } = useParams();
 
-      });
-    }, []);
-
+  useEffect(() => {
+    axios.get(`http://localhost:4000/question`).then((res) => {
+      console.log(res.data);
+      let copy = [...questions, ...res.data];
+      console.log(copy);
+      setQuestions(copy);
+    });
+  }, []);
 
     let ArticleStyle = styled.div`
         width: 75%;
