@@ -51,6 +51,7 @@ function AskQ() {
   let { id } = useParams();
 
   let question = {
+    questionId: 134,
     userId: 1,
     title: titleValue,
     body: bodyValue,

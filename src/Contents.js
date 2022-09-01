@@ -239,6 +239,7 @@ let PostYourAnswerButton = styled.button`
 
 function Contents() {
     let {id} = useParams()
+    
     let [choice, setChoice] = useState([])
     let navigate = useNavigate();
     
@@ -264,7 +265,7 @@ function Contents() {
             <Aside />
                 {
                   choice.filter((el)=>{
-                      return el.questionId === parseInt(id)+1;
+                      return el.questionId === parseInt(id);
                     }).map((el, key)=>{
                       console.log(el)
                     return(
