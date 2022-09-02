@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const HeadLine = styled.div`
-  width: 70em;
+  width: 85vw;
   height: 82px;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -28,15 +28,16 @@ const HeadLine = styled.div`
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: large;
+  font-size: 27px;
 `;
 
 const ContentBox = styled.div`
   display: flex;
-  width: 85vw;
+  width: 82vw;
   justify-content: space-between;
-  padding: 24px;
+  padding: 0, 24, 24, 24px;
   border: 1px solid red;
+  margin-bottom: 20px;
 `;
 const LeftBox = styled.div`
   flex-direction: column;
@@ -47,18 +48,43 @@ const InsertBox = styled.div`
   border-radius: 3px;
   box-sizing: inherit;
   background-color: #ffffff;
-  width: 53em;
-  height: 600px;
+  width: 50em;
+  height: 500px;
   flex-direction: column;
+  display: flex;
   justify-content: space-around;
-  padding: 16px;
+  padding: 18px;
   margin-bottom: 20px;
   box-shadow: 3px 3px 11px -4px #d8d9da;
-
+`;
+const TitleContent = styled.div`
+  width: 96%;
+  height: 90px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
   > label {
     font-weight: bold;
+    div {
+      font-weight: 400;
+    }
   }
 `;
+
+const BodyContent = styled.div`
+  width: 96%;
+  height: 260px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  > label {
+    font-weight: bold;
+    div {
+      font-weight: 400;
+    }
+  }
+`;
+
 const InputBoxes = styled.input`
   width: 96%;
   height: 25px;
@@ -79,9 +105,38 @@ const RightBox = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  width: 150px;
-  height: 50px;
-  background-color: aliceblue;
+  width: 155px;
+  height: 48px;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(206 100% 53% / 1);
+  text-align: center;
+  color: #ffffff;
+  padding: 0.8em;
+`;
+const Info = styled.div`
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid hsl(210deg 8% 90%);
+  div {
+    border-bottom: 1px solid hsl(210deg 8% 90%);
+    background-color: #f8f9f9;
+    color: hsl(210deg 8% 35%);
+    width: 100%;
+    height: 30px;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  p {
+    padding: 12px 15px;
+  }
+`;
+
+const DropInfo = styled.div`
+  flex-direction: column;
 `;
 
 const ModalBox = styled.div`
@@ -136,61 +191,94 @@ function AskQ() {
         <ContentBox>
           <LeftBox>
             <InsertBox>
-              <label>
-                Title
-                <div>
-                  <p>
-                    Be specific and imagine you're asking a question to anoher
-                    person
-                  </p>
-                </div>
-              </label>
-              <InputBoxes
-                type="text"
-                id="title"
-                placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
-                onChange={(e) => {
-                  setTitleValue(e.target.value);
-                  console.log(titleValue);
-                }}
-              ></InputBoxes>
-              <label>body</label>
-              <p>
-                Include all the information someone would need to answer your
-                question
-              </p>
-              <TextareaBox
-                onChange={(e) => {
-                  setBodyValue(e.target.value);
-                  console.log(bodyValue);
-                }}
-              ></TextareaBox>
-              <label>Tags</label>
-              <p>Add up to 5 tags to describe what your question is about</p>
-              <InputBoxes
-                type="text"
-                placeholder="e.g. (angular sql-server string)"
-                onChange={(e) => {
-                  setTagsValue(e.target.value);
-                  console.log(tagsValue);
-                }}
-              ></InputBoxes>
+              <TitleContent>
+                <label>
+                  Title
+                  <div>
+                    <p>
+                      Be specific and imagine you're asking a question to anoher
+                      person
+                    </p>
+                  </div>
+                </label>
+                <InputBoxes
+                  type="text"
+                  id="title"
+                  placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
+                  onChange={(e) => {
+                    setTitleValue(e.target.value);
+                    console.log(titleValue);
+                  }}
+                ></InputBoxes>
+              </TitleContent>
+              <BodyContent>
+                <label>
+                  body
+                  <div>
+                    <p>
+                      Include all the information someone would need to answer
+                      your question
+                    </p>
+                  </div>
+                </label>
+                <TextareaBox
+                  onChange={(e) => {
+                    setBodyValue(e.target.value);
+                    console.log(bodyValue);
+                  }}
+                ></TextareaBox>
+              </BodyContent>
+              <TitleContent>
+                <label>
+                  Tags
+                  <div>
+                    <p>
+                      Add up to 5 tags to describe what your question is about
+                    </p>
+                  </div>
+                </label>
+                <InputBoxes
+                  type="text"
+                  placeholder="e.g. (angular sql-server string)"
+                  onChange={(e) => {
+                    setTagsValue(e.target.value);
+                    console.log(tagsValue);
+                  }}
+                ></InputBoxes>
+              </TitleContent>
             </InsertBox>
             <SubmitButton onClick={WriteSub}>Review your question</SubmitButton>
           </LeftBox>
 
           <RightBox>
-            <>
-              <div>
-                <p>Step 1: Draft your question</p>
-              </div>
-              <div>
-                <p>Have a non-programing question?</p>
-              </div>
-              <div>
-                <p>More helpful links</p>
-              </div>
-            </>
+            <Info>
+              <div>Step 1: Draft your question</div>
+              <p>
+                The community is here to help you with specific coding,
+                algorithm, or language problems.
+              </p>
+              <p>Avoid asking opinion-based questions.</p>
+            </Info>
+            <DropInfo>
+              <ul>
+                1 . Summarize the problem
+                <li>Include details about your goal</li>
+                <li>Describe expected and actual results</li>
+                <li>Include any error messages</li>
+              </ul>
+            </DropInfo>
+
+            <div>
+              <ol>
+                <li>
+                  <p>Have a non-programing question?</p>
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <p>More helpful links</p>
+            </div>
           </RightBox>
         </ContentBox>
       </Container>

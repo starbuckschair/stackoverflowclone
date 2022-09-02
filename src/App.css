@@ -31,7 +31,8 @@ footer {
   clear: both;
   height: 200px;
   padding: 20px;
-  background-color: beige;
+  color: #babfc4;
+  background-color: #232629;
   border: 1px solid blue;
   display: flex;
   justify-content: space-around;
