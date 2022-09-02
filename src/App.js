@@ -20,10 +20,7 @@ function App() {
       < Header />
       < Routes>
         <Route path="/" element={ 
-          <>
-            < Aside />
             < Article />
-          </>
         }/>
         <Route path="/question" element={ <AskQ /> } />
         <Route path="/contents/:id" element={ <Contents /> } />
