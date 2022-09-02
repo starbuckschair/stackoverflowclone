@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Contents from "../Contents.js";
 import { useNavigate, useParams } from "react-router-dom";
+import { IoChevronDownOutline } from "react-icons/io5";
 
 const BackStyle = styled.div`
   padding-top: 70px;
@@ -24,11 +25,15 @@ const HeadLine = styled.div`
   height: 82px;
   padding-top: 24px;
   padding-bottom: 24px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
-  font-weight: bold;
-  font-size: 27px;
+  font-weight: 500;
+  font-size: 26px;
+  background-image: url("https://cdn.sstatic.net/Img/ask/background.svg?v=2e9a8205b368");
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  //미디어쿼리 적용하기
 `;
 
 const ContentBox = styled.div`
@@ -36,7 +41,6 @@ const ContentBox = styled.div`
   width: 82vw;
   justify-content: space-between;
   padding: 0, 24, 24, 24px;
-  border: 1px solid red;
   margin-bottom: 20px;
 `;
 const LeftBox = styled.div`
@@ -55,7 +59,7 @@ const InsertBox = styled.div`
   justify-content: space-around;
   padding: 18px;
   margin-bottom: 20px;
-  box-shadow: 3px 3px 11px -4px #d8d9da;
+  box-shadow: 2px 3px 5px 1px rgba(186, 190, 194, 0.66);
 `;
 const TitleContent = styled.div`
   width: 96%;
@@ -95,13 +99,15 @@ const TextareaBox = styled.textarea`
   width: 96%;
   height: 200px;
   padding: 4px;
+  resize: none;
 `;
 const RightBox = styled.div`
-  background-color: #ffffff;
   width: 20em;
-  /* border: 1px solid red; */
-  height: 350px;
-  box-shadow: 3px 3px 11px -4px #d8d9da;
+  height: 500px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  /* box-shadow: 2px 3px 5px 1px rgba(186, 190, 194, 0.66); */
 `;
 
 const SubmitButton = styled.button`
@@ -115,18 +121,25 @@ const SubmitButton = styled.button`
   padding: 0.8em;
 `;
 const Info = styled.div`
+  box-sizing: inherit;
+  background-color: #f8f9f9;
+  border-radius: 5px;
   flex-direction: column;
   display: flex;
   justify-content: space-around;
+  box-shadow: 2px 3px 5px 1px rgba(186, 190, 194, 0.66);
   border: 1px solid hsl(210deg 8% 90%);
+  &:first-child {
+    background-color: #ffffff;
+  }
   div {
     border-bottom: 1px solid hsl(210deg 8% 90%);
-    background-color: #f8f9f9;
+    background-color: #ffffff;
     color: hsl(210deg 8% 35%);
-    width: 100%;
+    /* width: 100%; */
     height: 30px;
     padding: 12px 15px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     display: flex;
     align-items: center;
   }
@@ -135,8 +148,29 @@ const Info = styled.div`
   }
 `;
 
-const DropInfo = styled.div`
-  flex-direction: column;
+// const DropInfo = styled.div`
+//   flex-direction: column;
+//   div {
+//     box-sizing: inherit;
+//     background-color: #ffffff;
+//     border-bottom: 1px solid hsl(210deg 8% 90%);
+//     width: 100%;
+//     height: 27px;
+//     padding: 12px;
+//     display: flex;
+//     align-items: center;
+//   }
+// `;
+const DropGray = styled.div`
+  div {
+    background-color: #f8f9f9;
+    box-sizing: inherit;
+    height: 25px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 5px 1px rgba(186, 190, 194, 0.66);
+  }
 `;
 
 const ModalBox = styled.div`
@@ -258,27 +292,24 @@ function AskQ() {
                 algorithm, or language problems.
               </p>
               <p>Avoid asking opinion-based questions.</p>
+              <div>
+                1 . Summarize the problem <IoChevronDownOutline />
+              </div>
+              <div>
+                2 . Describe what you've tried <IoChevronDownOutline />
+              </div>
+              <div>
+                3 . Shw some code
+                <IoChevronDownOutline />
+              </div>
             </Info>
-            <DropInfo>
-              <ul>
-                1 . Summarize the problem
-                <li>Include details about your goal</li>
-                <li>Describe expected and actual results</li>
-                <li>Include any error messages</li>
-              </ul>
-            </DropInfo>
 
-            <div>
-              <ol>
-                <li>
-                  <p>Have a non-programing question?</p>
-                </li>
-              </ol>
-            </div>
-
-            <div>
-              <p>More helpful links</p>
-            </div>
+            <DropGray>
+              <div>Have a non-programing question?</div>
+            </DropGray>
+            <DropGray>
+              <div>More helpful links</div>
+            </DropGray>
           </RightBox>
         </ContentBox>
       </Container>
