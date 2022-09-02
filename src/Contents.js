@@ -258,27 +258,25 @@ function Contents() {
         
       },[])
 
-  //   console.log(choice[0].userId);
-
     return(
-        <>
-            <Aside />
-                {
-                  choice.filter((el)=>{
-                      return el.questionId === parseInt(id);
-                    }).map((el, key)=>{
-                      console.log(el)
-                    return(
-                    <ContentBox>
-                        <InsertBox> 
-                            <TitleBox key={key}>{el.title}</TitleBox>
-                            <AskButton onClick={() => {navigate('/question');}}>Ask Question</AskButton>
-                        </InsertBox>
-                        <CurrentStateBox>
-                <AskedBox>Asked today</AskedBox>
-                <AskedBox>Modified today</AskedBox>
-                <AskedBox>Viewed 28times</AskedBox>
-              </CurrentStateBox>
+      <>
+        <Aside />
+          {
+            choice.filter((el)=>{
+              return el.questionId === parseInt(id);
+            }).map((el, key)=>{
+              console.log(el)
+              return(
+              <ContentBox>
+                <InsertBox> 
+                  <TitleBox key={key}>{el.title}</TitleBox>
+                  <AskButton onClick={() => {navigate('/question');}}>Ask Question</AskButton>
+                </InsertBox>
+                <CurrentStateBox>
+                  <AskedBox>Asked today</AskedBox>
+                  <AskedBox>Modified today</AskedBox>
+                  <AskedBox>Viewed 28times</AskedBox>
+                </CurrentStateBox>
               <Body>
                 <Sidebar>
                   <Buttons>⬆︎</Buttons>
@@ -385,10 +383,10 @@ function Contents() {
                   </YourAnswer>
                 </BodyMain>
               </Body>
-            </ContentBox>
+              </ContentBox>
           );
-        })}
-    </>
+              })}
+      </>
   );
 }
 

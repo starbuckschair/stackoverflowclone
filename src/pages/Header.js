@@ -1,5 +1,12 @@
 import {Routes, Route, Link, useNavigate} from "react-router-dom";
 import styled from "styled-components";
+import { GoInbox } from 'react-icons/go';
+import { AiFillTrophy, AiOutlineQuestionCircle, AiFillMessage } from 'react-icons/ai';
+import { IoIosFingerPrint } from 'react-icons/io';
+
+
+
+
 
 //jj
 
@@ -10,9 +17,10 @@ let HeaderLine = styled.header`
   padding: 0.5%;
   margin-top: 0;
   margin-bottom: 20px;
-  border: 1px solid #61dafb;
-  background-color: white;
+  background-color: rgb(249 249 249);
+  box-shadow: 3px 2px 14px -6px rgba(0,0,0,0.75);
   display: flex;
+  justify-content: center;
   
   @media screen and (max-width: 768px) {
     justify-content: space-around;
@@ -20,21 +28,36 @@ let HeaderLine = styled.header`
   
 `
 let Logo = styled.div`
-  width: 5%;
+  width: 150px;
   height: 30px;
   margin: 0.5%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background-image: url("./stacklogo.png");
+  background-position: center;
+  background-size: cover;
   @media screen and (max-width: 768px) {
-    width: 10%;
+    width: 50px;
     margin: 0.5%;
+    background-image: url("./minilogo.png");
+    background-position: center;
+    background-size: cover;
     }
 `
 let ProductButton = styled.button`
-  width: 5%;
+  width: 6%;
   height: 30px;
   font-size: 14px;
   margin: 0.5%;
-  border: 1px solid red;
+  background-color: rgb(249 249 249);
+  align-items: center;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  &:hover{       
+  background-color : rgb(228 230 232);   
+  border-radius: 20px;  
+  color : black;   
+  }
   @media screen and (max-width: 768px) {
     width: 10%;
     margin: 0.5%;
@@ -42,22 +65,32 @@ let ProductButton = styled.button`
 `
 
 let HeaderInput = styled.input`
-  width: 60%;
+  width: 50%;
   height: 30px;
   margin: 0.5%;
-  border: 1px solid blue;
+  border: 1px solid rgb(188 191 195);
+  border-radius: 5px;
+  background-image:url('./baseline_search_black_24dp.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+
   @media screen and (max-width: 768px) {
     display: none;
     }
 `
 
+// let MagniIcon = styled.div`
+
+// `
+
 let IconBox = styled.div`
   width: 20%;
   height: 30px;
   margin: 0.5%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   @media screen and (max-width: 768px) {
     width: 40%;
     margin: 0.5%;
@@ -65,11 +98,11 @@ let IconBox = styled.div`
 `
 
 let HeaderIcon = styled.div`
-  width: 20%;
-  height: 70%;
-  margin: 0.5%;
-  border: 1px solid red;
-  flex: 1 1 0;
+  width: 15%;
+  height: auto;
+  margin: 3px;
+  font-size: 22px;
+  color: rgb(83 89 95);
   @media screen and (max-width: 768px) {
     width: 20%;
     height: 70%;
@@ -79,23 +112,39 @@ let HeaderIcon = styled.div`
 
 
 
+let HeaderIconBox = styled.div`
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+`
+
+
+
 function Header(){
     let navigate = useNavigate();
     return(
         <HeaderLine>
-        <Logo onClick={()=>{navigate('/')}}>로고</Logo>
+        <Logo onClick={()=>{navigate('/')}}>
+        </Logo>
         <ProductButton>Products</ProductButton>
         <HeaderInput
           type="text"
           className="headerInput"
-          placeholder="(돋보기아이콘)Search..."
-        ></HeaderInput>
-          <IconBox>
-          <HeaderIcon onClick={()=>{navigate('/users')}}>myIcon</HeaderIcon>
-          <HeaderIcon>icon1</HeaderIcon>
-          <HeaderIcon>icon1</HeaderIcon>
-          <HeaderIcon>icon1</HeaderIcon>
-          <HeaderIcon>icon1</HeaderIcon>
+          placeholder="Search..."
+        >
+
+        </HeaderInput>
+          <IconBox>     
+            <HeaderIconBox>
+              <HeaderIcon onClick={()=>{navigate('/users')}}>
+                <IoIosFingerPrint />
+              </HeaderIcon>
+              <HeaderIcon>< GoInbox /></HeaderIcon>
+              <HeaderIcon>< AiFillTrophy /></HeaderIcon>
+              <HeaderIcon>< AiOutlineQuestionCircle /></HeaderIcon>
+              <HeaderIcon>< AiFillMessage /></HeaderIcon>
+            </HeaderIconBox>
         </IconBox>
       </HeaderLine>
     )
