@@ -24,7 +24,6 @@ function Article() {
     });
   }, []);
 
-<<<<<<< HEAD
 let MainPage = styled.div`
   width: 100%;
   margin: 0px;
@@ -94,54 +93,6 @@ let AllQuestion = styled.div`
 
 `
 let QuestionButton = styled.button`
-=======
-  let MainPage = styled.div`
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-  `;
-  let ArticleStyle = styled.div`
-    width: 95%;
-    height: auto;
-    padding: 0.5%;
-    padding-top: 50px;
-    padding-left: 210px;
-    float: right;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-    /* align-items: center; */
-  `;
-  let MainBar = styled.div`
-    width: 58%;
-    height: auto;
-    margin: 0.5%;
-    border-left: 1px solid rgb(216 217 220);
-  `;
-  let HeadLine = styled.div`
-    width: 100%;
-    height: auto;
-    background-color: white;
-    /* border: 1px solid rgb(216 217 220); */
-    font-size: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `;
-  let AllQuestion = styled.div`
-    width: 40%;
-    height: auto;
-    font-size: 27px;
-    font-weight: 500;
-    color: black;
-    padding: 0.5%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    margin: 0.5%;
-  `;
-  let QuestionButton = styled.button`
->>>>>>> 65e89f5066ead141e841aca69f55a8796b732dbc
     width: 110px;
     height: 40px;
     background-color: rgb(67 147 247);
@@ -157,7 +108,6 @@ let QuestionButton = styled.button`
       background-color: #0074cc;
       cursor: pointer;
     }
-<<<<<<< HEAD
 `
 let HeadLineTwo = styled.div`
   width: 95%;
@@ -171,27 +121,11 @@ let HeadLineTwo = styled.div`
   align-items: center;
 `
 let QuestionTotal = styled.div`
-=======
-  `;
-  let HeadLineTwo = styled.div`
-    width: 96%;
-    height: 50px;
-    background-color: white;
-    padding-left: 20px;
-    padding-right: 0px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  `;
-  let QuestionTotal = styled.div`
->>>>>>> 65e89f5066ead141e841aca69f55a8796b732dbc
     width: 30%;
     height: 15px;
     font-size: 18px;
     margin-top: 0.5%;
     text-align: left;
-<<<<<<< HEAD
 `
 let FilterBar = styled.div`
   width: 70%;
@@ -272,84 +206,6 @@ let LeftBoxSons = styled.div`
   margin-bottom: 10px;
 `
 let VotesDiv = styled(LeftBoxSons)`
-=======
-  `;
-  let FilterBar = styled.div`
-    width: 70%;
-    height: 30px;
-    background-color: white;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-  `;
-  let FilterBarButton = styled.button`
-    width: auto;
-    height: 35px;
-    /* margin: 0.5%; */
-    background-color: white;
-    /* padding: 10px; */
-    border: 1px solid rgb(216 217 220);
-    font-size: 13px;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  `;
-  let FilterButton = styled(FilterBarButton)`
-    width: 70px;
-    margin-left: 20px;
-    border-radius: 5px;
-    color: rgb(72 114 153);
-    font-weight: 600;
-    background-color: rgb(216 225 232);
-    &:hover {
-      background-color: rgb(150 175 198);
-      color: rgb(37 59 80);
-      cursor: pointer;
-    }
-  `;
-  let SelectButton = styled.select`
-    width: auto;
-    height: 35px;
-    background-color: white;
-    border: 1px solid rgb(216 217 220);
-    font-size: 12px;
-  `;
-  let FilteredQuestion = styled.div`
-    width: 94%;
-    height: auto;
-    padding: 16px;
-    margin-left: 2px;
-    border-top: 1px solid rgb(216 217 220);
-    background-color: white;
-    color: black;
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
-  `;
-  let LeftBox = styled.div`
-    width: 10%;
-    height: auto;
-    /* background-color: black; */
-    font-size: 14px;
-    margin-right: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-  `;
-  let LeftBoxSons = styled.div`
-    width: 80%;
-    height: 16px;
-    background-color: white;
-    color: black;
-    text-align: right;
-    margin-bottom: 10px;
-  `;
-  let VotesDiv = styled(LeftBoxSons)`
->>>>>>> 65e89f5066ead141e841aca69f55a8796b732dbc
     font-weight: bold;
     margin-top: 0;
   `;
