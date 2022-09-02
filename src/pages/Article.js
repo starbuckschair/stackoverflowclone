@@ -26,29 +26,45 @@ function Article() {
   }, []);
 
 let MainPage = styled.div`
+  width: 100%;
   margin: 0px;
   padding: 0px;
+  padding-top: 70px;
   display: flex;
+  /* background-color: pink; */
+  justify-content: center;
+  box-sizing: border-box;
+`
+let Sidebar = styled.div`
+  width: 147px;
+  height: auto;
+  /* background-color: yellow; */
+  display:flex;
+  justify-content: right;
 
 `
+
 let ArticleStyle = styled.div`
-  width: 95%;
+  width: 80%;
   height: auto;
   padding: 0.5%;
-  padding-top: 50px;
-  padding-left: 210px;
+  padding-top: 0px;
+  /* background-color: blue; */
   float: right;
   margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
-  /* align-items: center; */
 `
 let MainBar = styled.div`
-  width: 58%;
+  width: 70%;
   height: auto;
   margin: 0.5%;
+  padding: 5px;
   border-left: 1px solid rgb(216 217 220);
-
+  
+  @media screen and (max-width: 768px) {
+    width: 98%;
+}
 `
 let HeadLine = styled.div`
   width: 100%;
@@ -59,6 +75,8 @@ let HeadLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* position: relative; */
+
 `
 let AllQuestion = styled.div`
   width: 40%;
@@ -71,6 +89,8 @@ let AllQuestion = styled.div`
   padding-bottom: 20px;
   padding-left: 20px;
   margin: 0.5%;
+
+
 
 `
 let QuestionButton = styled.button`
@@ -89,13 +109,12 @@ let QuestionButton = styled.button`
       background-color : #0074cc;
       cursor: pointer;
     }
-
 `
 let HeadLineTwo = styled.div`
-  width: 96%;
+  width: 95%;
   height: 50px;
   background-color: white;
-  padding-left: 20px;
+  padding-left: 5%;
   padding-right: 0px;
   margin-bottom: 5px;
   display: flex;
@@ -112,6 +131,7 @@ let QuestionTotal = styled.div`
 let FilterBar = styled.div`
   width: 70%;
   height: 30px;
+  margin-right: 20px;
   background-color: white;
   display: flex;
   justify-content: right;
@@ -146,17 +166,20 @@ let FilterButton = styled(FilterBarButton)`
     }
 `
 let SelectButton = styled.select`
-  width: auto;
+  width: 60px;
   height: 35px;
   background-color: white;
   border: 1px solid rgb(216 217 220);
   font-size: 12px;
+  /* padding-right:5px; */
+  /* padding-right: 5px; */
+  text-align: center;
 `
 let FilteredQuestion = styled.div`
-  width: 94%;
+  width: 100%;
   height: auto;
   padding: 16px;
-  margin-left: 2px;
+  /* margin-left: 2px; */
   border-top: 1px solid rgb(216 217 220);
   background-color: white;
   color: black;
@@ -334,7 +357,9 @@ let SeeAll = styled.div`
 
   return (
     <MainPage>
+      <Sidebar>
       <Aside />
+      </Sidebar>
       <ArticleStyle>
         <MainBar>
           <HeadLine>

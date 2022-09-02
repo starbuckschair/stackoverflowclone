@@ -3,18 +3,16 @@ import { IoIosGlobe } from "react-icons/io";
 
 
 let Menubar = styled.div`
-  width: 147px;
-  height: auto;
   padding: 5px;
-  padding-top: 80px;
+  margin-top: 10px;
   margin-bottom: 200px;
   position: fixed;
-  left: 60px;
+  float: left;
+  /* background-color: green; */
   display: flex;
   flex-direction:column;
-
+  word-break:break-all;
 ;
-
 `
 
 let MainDish = styled.ol`
@@ -42,6 +40,7 @@ let SideDishQuestions = styled.li`
     background-color: rgb(241 242 243);
     font-weight:bolder;
     color: black;
+    position: static;
     display: flex;
     justify-content: flex-start;
     align-items: center;

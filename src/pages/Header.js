@@ -7,9 +7,6 @@ import { IoIosFingerPrint } from 'react-icons/io';
 
 
 
-
-//jj
-
 let HeaderLine = styled.header`
   position: fixed;
   width: 100%;

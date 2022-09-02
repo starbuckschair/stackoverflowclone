@@ -20,7 +20,9 @@ function App() {
       < Header />
       < Routes>
         <Route path="/" element={ 
+          <>
             < Article />
+          </>
         }/>
         <Route path="/question" element={ <AskQ /> } />
         <Route path="/contents/:id" element={ <Contents /> } />
@@ -31,7 +33,7 @@ function App() {
           </>
         }/>
        </Routes>
-      < Footer />     
+      < Footer />
     </>
   );
 }
