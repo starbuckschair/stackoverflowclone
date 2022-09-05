@@ -28,7 +28,7 @@ const HeadLine = styled.div`
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 26px;
+  font-size: 27px;
   background-image: url("https://cdn.sstatic.net/Img/ask/background.svg?v=2e9a8205b368");
   background-repeat: no-repeat;
   background-position: right center;
@@ -63,7 +63,7 @@ const InsertBox = styled.div`
 `;
 const TitleContent = styled.div`
   width: 96%;
-  height: 90px;
+  height: 80px;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
@@ -90,16 +90,32 @@ const BodyContent = styled.div`
 `;
 
 const InputBoxes = styled.input`
-  width: 96%;
+  width: 100%;
   height: 25px;
   text-align: start;
   padding: 4.5px;
+  border-radius: 3px;
+  border: none;
+  outline: 1px solid hsl(210, 8%, 75%);
+  &:focus {
+    border: 1px solid hsl(206, 100%, 52%);
+    border-radius: 3px;
+    outline: 1px solid #9bc5f2;
+  }
 `;
 const TextareaBox = styled.textarea`
-  width: 96%;
+  width: 100%;
   height: 200px;
   padding: 4px;
+  border-radius: 3px;
   resize: none;
+  border: none;
+  outline: 1px solid hsl(210,8%,75%);
+  &:focus {
+    border: 1px solid hsl(206,100%,52%);
+    border-radius: 3px;
+    outline: 1px solid #9bc5f2;
+  }
 `;
 const RightBox = styled.div`
   width: 20em;
@@ -112,13 +128,20 @@ const RightBox = styled.div`
 
 const SubmitButton = styled.button`
   width: 155px;
-  height: 48px;
+  height: 38px;
   border-radius: 5px;
-  border: none;
-  background-color: hsl(206 100% 53% / 1);
+  border: 1px solid transparent;
+  /* background-color: hsl(206 100% 53% / 1); */
+  background-color: #0A95ff;
   text-align: center;
   color: #ffffff;
+  font-weight: 600;
+  margin: 0 2px;
   padding: 0.8em;
+  box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
+  &:hover{
+    background-color: hsl(209deg 100% 38%);
+  }
 `;
 const Info = styled.div`
   box-sizing: inherit;
@@ -138,6 +161,7 @@ const Info = styled.div`
     color: hsl(210deg 8% 35%);
     /* width: 100%; */
     height: 30px;
+    border-radius: 3px;
     padding: 12px 15px;
     /* margin-bottom: 5px; */
     display: flex;
