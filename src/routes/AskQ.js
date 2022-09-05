@@ -29,7 +29,7 @@ const HeadLine = styled.div`
   align-items: center;
   font-weight: 500;
   font-size: 27px;
-  background-image: url("https://cdn.sstatic.net/Img/ask/background.svg?v=2e9a8205b368");
+  background-image: url("http://ec2-3-34-91-191.ap-northeast-2.compute.amazonaws.com:8080/questions");
   background-repeat: no-repeat;
   background-position: right center;
 
@@ -231,7 +231,7 @@ function AskQ() {
 
   const WriteSub = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/question", {
+    fetch("http://ec2-3-34-91-191.ap-northeast-2.compute.amazonaws.com:8080/questions", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(question),

@@ -338,10 +338,10 @@ let PostYourAnswerButton = styled.button`
   color: white;
   border-radius: 2px;
   border: none;
-  &:hover {
-      background-color: #0074cc;
-      cursor: pointer;
-    } 
+  box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
+  &:hover{
+    background-color: hsl(209deg 100% 38%);
+  }
 `;
 
 let DeleteButton =styled(PostYourAnswerButton)`
@@ -363,7 +363,7 @@ let DeleteButton =styled(PostYourAnswerButton)`
     
  
     useEffect(()=>{
-            axios.get('http://localhost:4000/question').then((res)=>{
+            axios.get('http://ec2-3-34-91-191.ap-northeast-2.compute.amazonaws.com:8080/questions').then((res)=>{
                 let copy = [...choice, ...res.data];
                 // console.log(copy);
                 setChoice(copy)
