@@ -102,6 +102,7 @@ let QuestionButton = styled.button`
     padding: 10px;
     text-align: center;
     border: none;
+    /* color:red; */
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
     &:hover {
       background-color: #0074cc;
