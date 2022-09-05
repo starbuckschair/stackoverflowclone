@@ -16,7 +16,7 @@ let Menubar = styled.div`
 `
 
 let MainDish = styled.ol`
-    width: auto;
+    width: 120px;
     margin-top:20px;
     font-size: 13px;
     color: rgb(83, 89, 95);
