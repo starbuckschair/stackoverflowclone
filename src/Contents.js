@@ -30,6 +30,7 @@ let Sidebar = styled.div`
   margin-bottom: 200px;
   float: left;
   display:flex;
+  /* color:red; */
   justify-content: right;
 `
 
