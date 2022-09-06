@@ -231,7 +231,7 @@ function AskQ() {
 
   const WriteSub = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/questions", {
+    fetch(`${process.env.REACT_APP_API_URL}`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(question),
