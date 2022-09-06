@@ -97,6 +97,7 @@ let QuestionButton = styled.button`
     height: 40px;
     background-color: rgb(67 147 247);
     color: white;
+    /* color: pink; */
     font-size: 13px;
     font-weight: bolder;
     margin: 2%;
