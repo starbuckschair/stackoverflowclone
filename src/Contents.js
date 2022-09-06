@@ -365,7 +365,7 @@ function Contents() {
   
  
     useEffect(()=>{
-            axios.get('http://localhost:4000/question').then((res)=>{
+            axios.get(`${process.env.REACT_APP_API_URL}`).then((res)=>{
                 let copy = [...choice, ...res.data];
                 // console.log(copy);
                 setChoice(copy)

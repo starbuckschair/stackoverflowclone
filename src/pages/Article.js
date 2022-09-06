@@ -17,7 +17,8 @@ function Article() {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:4000/question").then((res) => {
+    axios.get(`${process.env.REACT_APP_API_URL}`
+      ).then((res) => {
       console.log(res.data);
       let copy = [...questions, ...res.data];
       console.log(copy);
