@@ -17,7 +17,7 @@ function Article() {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://ec2-3-34-91-191.ap-northeast-2.compute.amazonaws.com:8080/questions").then((res) => {
+    axios.get("http://localhost:4000/question").then((res) => {
       console.log(res.data);
       let copy = [...questions, ...res.data];
       console.log(copy);
